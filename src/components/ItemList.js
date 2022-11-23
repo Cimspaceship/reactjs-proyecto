@@ -2,7 +2,7 @@ import Item from "./Item"
 
 const ItemList = ({products}) => {
     return (
-        <ul>
+        <ul className="d-flex">
             {products.map((product)=> (
                 <Item product={product}/>
             ))}

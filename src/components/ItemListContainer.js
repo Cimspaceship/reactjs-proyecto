@@ -10,15 +10,36 @@ const productos = [
      description:"PSU description",
      stock: 5,
      price: 45000,
-     img:"https://github.com/Cimspaceship/reactjs-proyecto/blob/main/public/assets/productos/aerocool-dorado-750w-rgb.png",
+     img: "/assets/productos/aerocool-dorado-750w-rgb.png"
+     ,
     },
    
     {
      id:"2",
-     name:"Mouse",
-     description:"Mouse Description",
-     stock: 2,
-    }
+     name:"Auriculares Viper Patriot v330",
+     description:"Headset description",
+     stock: 4,
+     price: 25000,
+     img:"/assets/productos/auriculares-viper-patriot-v330.png",
+    },
+
+    {
+     id:"3",
+     name:"Cooler Coolermaster Hyper 212 Black Edition",
+     description:"CPU Cooler description",
+     stock: 6,
+     price: 12500,
+     img:"/assets/productos/cooler-coolermaster-hyper212black.png",
+    },
+
+    {
+     id:"4",
+     name:"Fuente EVGA 500W 80PLUS WHITE",
+     description:"PSU description",
+     stock: 5,
+     price: 28700,
+     img:"/assets/productos/evga-500w-pluswhite.jpg",
+    },
    
    ]
    
@@ -28,14 +49,16 @@ function ItemListContainer({}) {
     const [products, setProducts] = useState([])
     
 
-    const productList = new Promise((resolve) => setTimeout(()=>{resolve(productos)},3000))
+    const productList = new Promise((resolve) => setTimeout(()=>{resolve(productos)},2000))
     
     productList.then((data)=> setProducts(data))
 
 
     return (
         <div>
+            
             <ItemList products={products}/>
+            
         </div>
         
     )
