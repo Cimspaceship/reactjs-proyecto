@@ -7,7 +7,7 @@ function Body() {
         <section className="Body">
 
             <div className="ItemListContainer">
-                <ItemListContainer greeting="Bienvenido!"/>
+                <ItemListContainer/>
             </div>
         </section>
     )
