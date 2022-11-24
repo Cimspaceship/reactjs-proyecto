@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
       import Navbar from 'react-bootstrap/Navbar';
       import { FaEmpire } from 'react-icons/fa';
       import { BsFillCartFill } from "react-icons/bs";
+      import {Link} from "react-router-dom"
+      import "./NavBar.css"
 
 function NavBar() {
     return (
@@ -13,11 +15,10 @@ function NavBar() {
           Galactic Empire Hardstore
         </Navbar.Brand>
         <Nav className="me-auto">
-               <Nav.Link href="#home">Inicio</Nav.Link>
-               <Nav.Link href="#products">Productos</Nav.Link>
-               <Nav.Link href="#pcbuild">Arma Tu PC</Nav.Link>
-               <Nav.Link href="#contact">Contacto</Nav.Link>
-               <Nav.Link href="#login">Login</Nav.Link>
+               <Link to="/" className='navlink'>Inicio</Link>
+               <Link to="/category/PSU" className='navlink'>Fuentes</Link>
+               <Link to="/category/Cpu-Cooler" className='navlink'>Coolers para CPU</Link>
+               <Link to="/category/Headset" className='navlink'>Auriculares</Link>
              </Nav>
              <BsFillCartFill size="35px" color='green' className="me-4"/>
       </Container>

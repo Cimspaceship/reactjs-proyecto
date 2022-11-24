@@ -5,8 +5,8 @@
      description:"PSU description",
      stock: 5,
      price: 45000,
-     img: "/assets/productos/aerocool-dorado-750w-rgb.png"
-     ,
+     img: "/assets/productos/aerocool-dorado-750w-rgb.png",
+     category:"PSU",
     },
    
     {
@@ -16,6 +16,7 @@
      stock: 4,
      price: 25000,
      img:"/assets/productos/auriculares-viper-patriot-v330.png",
+     category:"Headset",
     },
 
     {
@@ -25,6 +26,7 @@
      stock: 6,
      price: 12500,
      img:"/assets/productos/cooler-coolermaster-hyper212black.png",
+     category:"Cpu-Cooler",
     },
 
     {
@@ -34,6 +36,7 @@
      stock: 5,
      price: 28700,
      img:"/assets/productos/evga-500w-pluswhite.jpg",
+     category:"PSU",
     },
    
    ]

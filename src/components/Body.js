@@ -1,5 +1,5 @@
 import ItemListContainer from "./ItemListContainer"
-import ItemDetailContainer from "./ItemDetailContainer"
+
 
 
 
@@ -9,7 +9,6 @@ function Body() {
 
             <div className="ItemListContainer">
                 <ItemListContainer/>
-                <ItemDetailContainer/>
             </div>
         </section>
     )

@@ -1,0 +1,10 @@
+.navlink {
+    text-decoration: none;
+    color:white;
+    margin: 5px;
+}
+
+.navlink:hover {
+    color: green;
+}
+
