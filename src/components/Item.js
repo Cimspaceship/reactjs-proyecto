@@ -1,7 +1,6 @@
-
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemDetailContainer from "./ItemDetailContainer"
+import { Link } from 'react-router-dom';
 
 
 const Item = ({product}) => {
@@ -13,7 +12,7 @@ const Item = ({product}) => {
           <Card.Text>
             ${product.price}
           </Card.Text>
-          <Button variant="primary">Añadir al Carrito</Button>
+          <Link to={`/item/${product.id}`}><Button variant="primary">Añadir al Carrito</Button></Link>
         </Card.Body>
       </Card>
     )

@@ -1,13 +1,19 @@
-import Header from "../components/Header"
 import { Layout } from '../components/Layout';
+import {useParams} from "react-router-dom"
+import ItemDetail from "../components/ItemDetail";
+import { productos } from "../mocks/products.mock";
 
 
 
 const ItemView = () => {
+
+    const {id} = useParams()
+const ids = productos.filter((product)=> product.id === id)
+
     return (
-     <Layout>
-        <h1>Item View</h1>
-     </Layout>
+    <Layout>
+        {ids.map((product)=><ItemDetail item={product}/>)}
+    </Layout>
     )
 }
 
