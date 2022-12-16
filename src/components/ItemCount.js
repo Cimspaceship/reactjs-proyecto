@@ -1,21 +1,22 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 
-export default function ItemCount() {
-  const [stock, setStock] = useState(5);
-  const [currentAmount, setCurrentAmount] = useState(0)
-  console.log(`el stock es ${stock}`)
-  
-  
+
+const ItemCount = ({count, handleCount}) =>  {
   return (
-    <div>
-      <button disabled={currentAmount == 0 } onClick={()=> setCurrentAmount(currentAmount-1)}>-</button>
-      <p>{currentAmount}</p>
-      <button disabled={currentAmount == stock }  onClick={()=> setCurrentAmount(currentAmount+1)}>+</button>
+    <div className='d-flex justify-content-evenly'>
 
-      <button disabled={currentAmount == 0 || stock == 0} onClick={()=> setStock(stock-currentAmount) || setCurrentAmount(0)}>agregar al carrito</button>
+      <span className='m-2'><button  onClick={() => handleCount("minus")}>-</button></span>
+
+      <span id='counter' className='m-2'>
+        <p>{count}</p>
+      </span>
+
+      <span className='m-2'><button  onClick={() => handleCount("plus")}>+</button></span>
+
     </div>
 
   );
 }
+
+export default ItemCount
 

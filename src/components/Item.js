@@ -21,13 +21,16 @@ const Item = ({product}) => {
 
 
     return (
-      <div onClick={goDetail}>
+      <div className='.d-inline-flex' onClick={goDetail}>
         <Card className='pointer' style={{ width: '18rem', margin:'2rem'}}>
         <Card.Img variant="top" src={product.img} />
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>
-            ${product.price}
+            <div className='d-flex justify-content-evenly '>
+              <span>${product.price} </span>
+              <span>stock: {product.stock}</span>
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>
