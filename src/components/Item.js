@@ -11,7 +11,7 @@ import "./Item.css"
 
 
 
-const Item = ({product}) => {
+export const Item = ({product}) => {
 
   function goDetail() {
     navigate(`/item/${product.id}`)

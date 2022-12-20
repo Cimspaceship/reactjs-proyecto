@@ -1,19 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
-import Header from './components/Header'
 import Body from './components/Body';
 import { Layout } from './components/Layout';
+import { CartContextProvider } from './context/cartContext';
 
 
 
 function App() {
   return (
-    
+    <CartContextProvider>
       <Layout>
         <Body/>
       </Layout>
-    
+    </CartContextProvider>
   );
 }
 
