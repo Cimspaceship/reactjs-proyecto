@@ -5,8 +5,11 @@ import Container from 'react-bootstrap/Container';
       import { BsFillCartFill } from "react-icons/bs";
       import {Link} from "react-router-dom"
       import "./NavBar.css"
+      import { useNavigate } from "react-router-dom";
+      
 
 function NavBar() {
+  const navigate = useNavigate()
     return (
       <Navbar bg="dark" variant="dark">
       <Container>
@@ -20,7 +23,9 @@ function NavBar() {
                <Link to="/category/Cpu-Cooler" className='navlink'>Coolers para CPU</Link>
                <Link to="/category/Headset" className='navlink'>Auriculares</Link>
              </Nav>
-             <BsFillCartFill size="35px" color='green' className="me-4"/>
+             <Link to="/cart">
+               <BsFillCartFill size="35px" color='green' className="me-4"/>
+             </Link>
       </Container>
     </Navbar>
         );

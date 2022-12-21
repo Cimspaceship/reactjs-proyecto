@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import "./Item.css"
+import { CartContext } from "../context/cartContext"
 
 
 
@@ -11,7 +11,7 @@ import "./Item.css"
 
 
 
-export const Item = ({product}) => {
+export const Item = ({product, quantityAdded}) => {
 
   function goDetail() {
     navigate(`/item/${product.id}`)
@@ -21,15 +21,16 @@ export const Item = ({product}) => {
 
 
     return (
-      <div className='.d-inline-flex' onClick={goDetail}>
-        <Card className='pointer' style={{ width: '18rem', margin:'2rem'}}>
+      <div className='.d-inline-flex' >
+        <Card className='pointer'  onClick={goDetail} style={{ width: '18rem', margin:'2rem'}}>
         <Card.Img variant="top" src={product.img} />
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>
             <div className='d-flex justify-content-evenly '>
               <span>${product.price} </span>
-              <span>stock: {product.stock}</span>
+              <span>{quantityAdded ? "Agregados" : "En Stock"}:{" "}
+            {quantityAdded || product.stock}</span>
             </div>
           </Card.Text>
         </Card.Body>

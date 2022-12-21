@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContextProvider } from "../context/cartContext";
 import { CartContext } from "../context/cartContext";
 
 

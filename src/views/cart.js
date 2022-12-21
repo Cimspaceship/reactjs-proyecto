@@ -1,8 +1,9 @@
 import {Layout} from '../components/Layout'
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/cartContext"
 import {Item} from "../components/Item"
+import {TrashButton} from "../components/TrashButton"
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -18,10 +19,13 @@ const Cart = () => {
         <Layout>
           <div>
         {carrito.length === 0 ? (
-          <div>
-            <h1>No has agregado productos</h1>
+          <div className='m-3'>
+            <h1>No has agregado productos al carrito</h1>
           </div>
         ) : (
+
+
+
           <div>
             <div>
               {carrito.map((product) => {
@@ -29,22 +33,23 @@ const Cart = () => {
 
                 return (
                   <div>
+                    <TrashButton itemId={product.item.id}></TrashButton>
                     <Item
                       product={product.item}
                       quantityAdded={quantityAdded}
                     />
-
                   </div>
                 );
               })}
             </div>
             <div>
               
-                <button
+
+
+
+              <button
                   onClick={handleFinalizePurchase}
-                >
-                  Finalizar Compra
-                </button>
+                >Finalizar Compra</button>
               
             </div>
           </div>
