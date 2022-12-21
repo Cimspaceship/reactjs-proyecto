@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import "./Item.css"
 import { CartContext } from "../context/cartContext"
+import { TrashButton } from './TrashButton';
 
 
 
@@ -31,6 +32,8 @@ export const Item = ({product, quantityAdded}) => {
               <span>${product.price} </span>
               <span>{quantityAdded ? "Agregados" : "En Stock"}:{" "}
             {quantityAdded || product.stock}</span>
+                {/* {quantityAdded && <TrashButton  itemId={product.item.id}></TrashButton>} */}
+              
             </div>
           </Card.Text>
         </Card.Body>

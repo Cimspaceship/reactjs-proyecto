@@ -33,11 +33,11 @@ const Cart = () => {
 
                 return (
                   <div>
-                    <TrashButton itemId={product.item.id}></TrashButton>
                     <Item
                       product={product.item}
                       quantityAdded={quantityAdded}
                     />
+                    <TrashButton itemId={product.item.id}></TrashButton>
                   </div>
                 );
               })}
