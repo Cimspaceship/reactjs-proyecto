@@ -1,10 +1,19 @@
-import React, { createContext, useState, } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext([]);
 
 
 export const CartContextProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
+    const [totalAmount, setTotalAmount] = useState(0)
+
+
+    useEffect(() => {
+        const amount = carrito
+          .map((product) => parseInt(product.item.price) * product.quantityAdded)
+          .reduce((partialSum, a) => partialSum + a, 0);
+        setTotalAmount(amount);
+      }, [carrito]);
 
         function addItem(item, quantity) {
             const isAlreadyAdded = isInCart(item.id);
@@ -41,6 +50,6 @@ export const CartContextProvider = ({ children }) => {
         
 
     return (
-        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, carrito  }}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, carrito, totalAmount  }}>{children}</CartContext.Provider>
     );
 };

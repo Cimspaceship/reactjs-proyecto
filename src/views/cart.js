@@ -7,7 +7,7 @@ import {TrashButton} from "../components/TrashButton"
 
 const Cart = () => {
     const navigate = useNavigate();
-    const { carrito, clear } = useContext(CartContext);
+    const { carrito, clear, totalAmount } = useContext(CartContext);
 
     const handleFinalizePurchase = () => {
           clear();
@@ -37,7 +37,6 @@ const Cart = () => {
                       product={product.item}
                       quantityAdded={quantityAdded}
                     />
-                    <TrashButton itemId={product.item.id}></TrashButton>
                   </div>
                 );
               })}
@@ -47,9 +46,14 @@ const Cart = () => {
 
 
 
-              <button
-                  onClick={handleFinalizePurchase}
-                >Finalizar Compra</button>
+              <div>
+                <div>
+                Total a pagar: ${totalAmount}
+                </div>
+                <button
+                    onClick={handleFinalizePurchase}
+                  >Finalizar Compra</button>
+              </div>
               
             </div>
           </div>

@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import "./Item.css"
-import { CartContext } from "../context/cartContext"
 import { TrashButton } from './TrashButton';
 
 
@@ -23,16 +22,16 @@ export const Item = ({product, quantityAdded}) => {
 
     return (
       <div className='.d-inline-flex' >
-        <Card className='pointer'  onClick={goDetail} style={{ width: '18rem', margin:'2rem'}}>
-        <Card.Img variant="top" src={product.img} />
+        <Card className='pointer'  style={{ width: '18rem', margin:'2rem'}}>
+        <Card.Img onClick={goDetail} variant="top" src={product.img} />
         <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
+          <Card.Title onClick={goDetail}>{product.name}</Card.Title>
           <Card.Text>
             <div className='d-flex justify-content-evenly '>
               <span>${product.price} </span>
               <span>{quantityAdded ? "Agregados" : "En Stock"}:{" "}
             {quantityAdded || product.stock}</span>
-                {/* {quantityAdded && <TrashButton  itemId={product.item.id}></TrashButton>} */}
+                {quantityAdded && <TrashButton  itemId={product.id}></TrashButton>}
               
             </div>
           </Card.Text>

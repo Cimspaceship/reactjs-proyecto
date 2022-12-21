@@ -9,6 +9,6 @@ export const TrashButton = ({ itemId }) => {
     return (
 
 
-        <Button onClick={() => removeItem(itemId)} variant="danger">Danger</Button>
+        <Button onClick={() => removeItem(itemId)} variant="danger">Eliminar</Button>
 
     )}
