@@ -3,7 +3,7 @@ import { useContext} from "react"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/cartContext"
 import {Item} from "../components/Item"
-import {TrashButton} from "../components/TrashButton"
+
 
 const Cart = () => {
     const navigate = useNavigate();

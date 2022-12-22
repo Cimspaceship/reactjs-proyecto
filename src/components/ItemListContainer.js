@@ -1,34 +1,20 @@
 import {useState,useEffect} from "react"
-import ItemList from "./ItemList"
+import {ItemList} from "./ItemList"
 import {productos} from "../mocks/products.mock"
 import {useParams} from "react-router-dom"
+import { useGetItem } from "../hooks/useGetItem";
 
 
 
    
-function ItemListContainer({}) {
-    const {category} = useParams()
-    const [products, setProducts] = useState([])
+export const ItemListContainer = () => {
     
-    useEffect(()=> {
-        new Promise((resolve)=>
-        setTimeout(()=> {
-            resolve(productos);
-        },2000)
-        ).then((data)=> {
-            if(category) {
-                const categories = data.filter((product)=> product.category === category)
-                setProducts(categories)
-            } else {
-                setProducts(data)
-            }
-        })
-    },[category])
+    const items = useGetItem();
 
     return (
         <div>
             
-            <ItemList products={products}/>
+            <ItemList products={items} />
             
         </div>
         
@@ -37,4 +23,4 @@ function ItemListContainer({}) {
 
 
 
-export default ItemListContainer
+/* export default ItemListContainer */

@@ -1,4 +1,4 @@
-import ItemListContainer from "./ItemListContainer"
+import {ItemListContainer} from "./ItemListContainer"
 
 
 
@@ -7,7 +7,7 @@ function Body() {
     return (
         <section className="Body">
 
-            <div className="ItemListContainer">
+            <div>
                 <ItemListContainer/>
             </div>
         </section>

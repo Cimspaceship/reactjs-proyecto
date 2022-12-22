@@ -1,6 +1,6 @@
 import Item from "./Item"
 
-const ItemList = ({products}) => {
+export const ItemList = ({ products }) => {
     return (
         <ul className="d-flex">
             {products.map((product)=> (
@@ -11,4 +11,3 @@ const ItemList = ({products}) => {
     )
 }
 
-export default ItemList
