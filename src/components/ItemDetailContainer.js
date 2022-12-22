@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
     
     
-    return <ItemDetail item={item}/>
+    return item.img && <ItemDetail item={item}/>
 
 }
 
