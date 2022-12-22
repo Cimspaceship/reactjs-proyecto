@@ -11,7 +11,7 @@ import {
   import { useParams } from "react-router-dom";
   
   export const useGetItem = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const { category, id } = useParams();
   
     // Firebase Methods

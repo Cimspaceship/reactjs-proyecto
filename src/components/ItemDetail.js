@@ -10,17 +10,13 @@ import { CartContext } from "../context/cartContext";
 const ItemDetail = ({item}) => {
 
   const navigate = useNavigate();
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
   const { addItem } = useContext(CartContext)
 
-  function handleCount(type) {
-    if (type === "plus" && count < maxQuantity) setCount(count + 1);
-    if (type === "minus" && count > 1) setCount(count - 1);
-  }
 
-  function handleAdd() {
+  function handleAdd(count) {
     if (currentStock < count) alert("No hay suficiente stock de este producto");
     else setCurrentStock(currentStock - count);
     addItem(item, count)
@@ -46,8 +42,8 @@ const ItemDetail = ({item}) => {
                        </Card.Text>
            
            
-             <ItemCount count={count} handleCount={handleCount}></ItemCount>
-             <Button variant="success" onClick={handleAdd}>Agregar al carrito</Button>
+             <ItemCount stock={item.stock} handleAdd={handleAdd}></ItemCount>
+             
            </div>
         </Card.Body>
 

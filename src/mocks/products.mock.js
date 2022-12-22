@@ -1,4 +1,4 @@
- export const productos = [
+ /* export const productos = [
     {
      id:"1",
      name:"Fuente Aerocool Dorado 750W RGB",
@@ -39,4 +39,4 @@
      category:"PSU",
     },
    
-   ]
+   ] */
