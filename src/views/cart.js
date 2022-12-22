@@ -3,7 +3,7 @@ import { useContext} from "react"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/cartContext"
 import {Item} from "../components/Item"
-
+import { Button } from 'react-bootstrap'
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -13,11 +13,9 @@ const Cart = () => {
       navigate("/checkout");
     };
 
-    const handleFinalizePurchase = () => {
-          clear();
-          alert("Compra finalizada");
-          navigate("/");
-        }
+    const exploreProducts = () => {
+      navigate("/")
+    }
 
         return (
         <Layout>
@@ -25,18 +23,16 @@ const Cart = () => {
         {carrito.length === 0 ? (
           <div className='m-3'>
             <h1>No has agregado productos al carrito</h1>
+            <Button variant="success" onClick={exploreProducts}>Explorar productos</Button>
           </div>
         ) : (
 
-
-
-          <div>
+          <div className="d-flex">
             <div>
               {carrito.map((product) => {
                 const quantityAdded = product.quantityAdded;
-
                 return (
-                  <div>
+                  <div className="d-inline-flex">
                     <Item
                       product={product.item}
                       quantityAdded={quantityAdded}
@@ -45,21 +41,14 @@ const Cart = () => {
                 );
               })}
             </div>
+
+
+
             <div>
-              
-
-
-
-              <div>
-                <div>
-                Total a pagar: ${totalAmount}
-                </div>
-                <button
-                     onClick={goToCheckout}
-                  >Finalizar Compra</button>
-              </div>
-              
+                <p className='m-3 fs-1'>Total a pagar:<span className='fs-2'> ${totalAmount}</span></p>
+                <Button variant="success" onClick={goToCheckout}>Ir al Checkout</Button>
             </div>
+
           </div>
         )}
       </div>

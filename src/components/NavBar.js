@@ -4,12 +4,10 @@
       import { FaEmpire } from 'react-icons/fa';
       import {Link} from "react-router-dom"
       import "./NavBar.css"
-      import { useNavigate } from "react-router-dom";
       import CartWidget from './CartWidget';
       
 
 function NavBar() {
-  const navigate = useNavigate()
     return (
       <Navbar bg="dark" variant="dark">
       <Container>

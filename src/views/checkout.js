@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { CartContext } from "../context/cartContext";
+import { Button } from "react-bootstrap";
 
 // firebase
 import {
@@ -71,33 +72,32 @@ const CheckoutView = () => {
 
   return (
     <Layout>
-      <form onSubmit={handleFinalizePurchase} className="">
-        <div className="">
-          <input
-            placeholder="Nombre Completo"
-            required
-          />
-          <input
-            placeholder="Numero de Telefono"
-            type="number"
-            required
-          />
-          <input
-            placeholder="Email"
-            type={"email"}
-            required
-          />
-        </div>
-        <span>
-          Total a pagar: <strong>${totalAmount}</strong>
-        </span>
-        <button
-          type="submit"
-          className=""
-        >
-          Finalizar
-        </button>
-      </form>
+      <div className="d-block text-center">
+        <form onSubmit={handleFinalizePurchase} className="d-inline-flex justify-content">
+          <div className=" m-5 d-inline-block">
+            <input className="m-2"
+              placeholder="Nombre Completo"
+              required
+            />
+            <input className="m-2"
+              placeholder="Numero de Telefono"
+              type="number"
+              required
+            />
+            <input className="m-2"
+              placeholder="Email"
+              type={"email"}
+              required
+            />
+          </div>
+          <div className="d-inline-block">
+        
+          <div className="m-3">Total a pagar: <strong>${totalAmount}</strong></div>
+        
+          <Button variant="success" type="submit" className="">Finalizar Compra</Button>
+          </div>
+        </form>
+      </div>
     </Layout>
   );
 };

@@ -34,7 +34,6 @@ import {
       if (id) {
         getDoc(ref)
           .then((item) => {
-            console.log({ item });
             if (item.exists()) {
               setData({ id: item.id, ...item.data() });
             }
@@ -50,8 +49,6 @@ import {
   
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category, id]);
-  
-    console.log({ data });
   
     return data;
   };

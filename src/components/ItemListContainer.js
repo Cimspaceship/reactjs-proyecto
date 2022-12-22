@@ -1,7 +1,4 @@
-import {useState,useEffect} from "react"
 import {ItemList} from "./ItemList"
-import {productos} from "../mocks/products.mock"
-import {useParams} from "react-router-dom"
 import { useGetItem } from "../hooks/useGetItem";
 
 
