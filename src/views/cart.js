@@ -9,6 +9,9 @@ const Cart = () => {
     const navigate = useNavigate();
     const { carrito, clear, totalAmount } = useContext(CartContext);
 
+
+
+
     const handleFinalizePurchase = () => {
           clear();
           alert("Compra finalizada");

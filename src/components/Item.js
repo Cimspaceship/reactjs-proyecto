@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import "./Item.css"
 import { TrashButton } from './TrashButton';
 
+import { useGetItemImg } from "../hooks/useGetItemImg";
+
 
 
  
@@ -18,12 +20,13 @@ export const Item = ({product, quantityAdded}) => {
   }
 
   const navigate = useNavigate()
+  const img = useGetItemImg(product.img);
 
 
     return (
       <div className='.d-inline-flex' >
         <Card className='pointer'  style={{ width: '18rem', margin:'2rem'}}>
-        <Card.Img onClick={goDetail} variant="top" src={product.img} />
+        <Card.Img onClick={goDetail} variant="top" src={img} />
         <Card.Body>
           <Card.Title onClick={goDetail}>{product.name}</Card.Title>
           <Card.Text>

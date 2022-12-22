@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
+import { useGetItemImg } from "../hooks/useGetItemImg";
 
 
 
@@ -14,6 +15,7 @@ const ItemDetail = ({item}) => {
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
   const { addItem } = useContext(CartContext)
+  const img = useGetItemImg(item.img);
 
 
   function handleAdd(count) {
@@ -33,7 +35,7 @@ const ItemDetail = ({item}) => {
         <Card.Header className="fs-1">{item.name}</Card.Header>
         <Card.Body className="d-flex justify-content-around">
            <div>
-             <img src={item.img} alt="product image detail"></img>
+             <img src={img} alt="product image detail"></img>
              </div>
              <div>
                        <Card.Title className="fs-2">$ {item.price}</Card.Title>
