@@ -50,7 +50,7 @@ const ItemDetail = ({item}) => {
         </Card.Body>
 
         <Card.Footer className="text-muted">
-          <Button variant="success" onClick={handleCheckout}>Finalizar Compra</Button>{' '}
+          <Button variant="success" onClick={handleCheckout}>Ir al Carrito</Button>{' '}
         
         </Card.Footer>
             </Card>

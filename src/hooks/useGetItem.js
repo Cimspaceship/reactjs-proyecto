@@ -49,7 +49,7 @@ import {
       );
   
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [category, id]);
   
     console.log({ data });
   

@@ -9,8 +9,9 @@ const Cart = () => {
     const navigate = useNavigate();
     const { carrito, clear, totalAmount } = useContext(CartContext);
 
-
-
+    const goToCheckout = () => {
+      navigate("/checkout");
+    };
 
     const handleFinalizePurchase = () => {
           clear();
@@ -54,7 +55,7 @@ const Cart = () => {
                 Total a pagar: ${totalAmount}
                 </div>
                 <button
-                    onClick={handleFinalizePurchase}
+                     onClick={goToCheckout}
                   >Finalizar Compra</button>
               </div>
               
